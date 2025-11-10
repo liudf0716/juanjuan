@@ -54,8 +54,36 @@
   }
   </script>
   
+  <!-- Google Analytics 4 -->
+  <!-- 替换 G-XXXXXXXXXX 为你的 Google Analytics 测量 ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4VL0VBVJL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4VL0VBVJL');
+  </script>
+  
+  <!-- 百度统计 -->
+  <!-- 替换下面的代码为你在百度统计获取的代码 -->
+  <!--
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?YOUR_SITE_ID";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  -->
+  
   <link rel="icon" href="images/icon128.png">
   <link rel="apple-touch-icon" href="images/icon128.png">
+  
+  <!-- 不蒜子访问统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft Yahei", "PingFang SC";
@@ -223,6 +251,24 @@
       padding: 20px;
       border-top: 1px solid #eee;
     }
+    .site-stats {
+      margin-top: 12px;
+      padding: 10px;
+      font-size: 13px;
+      color: #999;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .site-stats span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .site-stats .stat-icon {
+      color: #ff2442;
+    }
     ol.install-steps {
       line-height: 1.9;
       font-size: 16px;
@@ -361,6 +407,22 @@
   <footer role="contentinfo">
     <p>© 2025 卷卷侠 ｜ Made with ❤️ by Dengfeng Liu</p>
     <p><small>关键词：小红书打印插件、试卷打印工具、Chrome扩展、学习资料管理</small></p>
+    
+    <!-- 不蒜子访问统计显示 -->
+    <div class="site-stats">
+      <span>
+        <span class="stat-icon">👁️</span>
+        本站总访问量 <span id="busuanzi_value_site_pv">-</span> 次
+      </span>
+      <span>
+        <span class="stat-icon">👤</span>
+        访客数 <span id="busuanzi_value_site_uv">-</span> 人
+      </span>
+      <span>
+        <span class="stat-icon">📄</span>
+        本页阅读量 <span id="busuanzi_value_page_pv">-</span> 次
+      </span>
+    </div>
   </footer>
 </body>
 </html>
