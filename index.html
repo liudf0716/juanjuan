@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO 基础标签 -->
-  <title>卷卷侠 - 小红书试卷打印插件 | 一键打印学习资料 Chrome 扩展</title>
-  <meta name="description" content="卷卷侠是一款免费的Chrome浏览器插件，帮助家长快速提取、打印小红书上的学习卷子和试卷图片。支持一键打印、PDF保存、收藏管理功能，让孩子学习更高效。">
-  <meta name="keywords" content="小红书打印,试卷打印,Chrome插件,浏览器扩展,学习资料,PDF保存,卷卷侠,教育工具,家长助手">
+  <title>小红书试卷提取打印工具 - 卷卷侠 | Chrome插件一键提取打印试卷</title>
+  <meta name="description" content="卷卷侠是专业的小红书试卷提取打印工具，Chrome插件帮助家长一键提取、打印小红书上的学习试卷和答案图片。支持批量提取、自动识别、PDF保存，让小红书试卷打印更简单高效。">
+  <meta name="keywords" content="小红书试卷提取打印,小红书试卷打印,小红书提取试卷,试卷提取工具,小红书打印插件,试卷打印工具,Chrome插件,卷卷侠,学习资料提取,PDF保存">
   <meta name="author" content="Dengfeng Liu">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://liudf0716.github.io/jjpage/">
@@ -15,15 +15,15 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://liudf0716.github.io/jjpage/">
-  <meta property="og:title" content="卷卷侠 - 小红书试卷打印插件">
-  <meta property="og:description" content="免费Chrome插件，一键提取打印小红书学习卷子，支持PDF保存和收藏管理。">
+  <meta property="og:title" content="小红书试卷提取打印工具 - 卷卷侠">
+  <meta property="og:description" content="专业的小红书试卷提取打印Chrome插件，一键提取打印小红书学习试卷，支持批量处理和PDF保存。">
   <meta property="og:image" content="https://liudf0716.github.io/jjpage/images/icon128.png">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://liudf0716.github.io/jjpage/">
-  <meta property="twitter:title" content="卷卷侠 - 小红书试卷打印插件">
-  <meta property="twitter:description" content="免费Chrome插件，一键提取打印小红书学习卷子，支持PDF保存和收藏管理。">
+  <meta property="twitter:title" content="小红书试卷提取打印工具 - 卷卷侠">
+  <meta property="twitter:description" content="专业的小红书试卷提取打印Chrome插件，一键提取打印小红书学习试卷，支持批量处理和PDF保存。">
   <meta property="twitter:image" content="https://liudf0716.github.io/jjpage/images/icon128.png">
   
   <!-- 结构化数据 (JSON-LD) -->
@@ -31,17 +31,19 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "卷卷侠",
+    "name": "卷卷侠 - 小红书试卷提取打印工具",
     "applicationCategory": "BrowserExtension",
     "operatingSystem": "Chrome",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "CNY"
-    },
-    "description": "免费的Chrome浏览器插件，帮助家长快速提取、打印小红书上的学习卷子和试卷图片。",
+    "description": "专业的小红书试卷提取打印Chrome插件，帮助家长快速提取、打印小红书上的学习试卷和答案图片。支持批量提取、自动识别、一键打印、PDF保存等功能。",
     "softwareVersion": "1.0.0",
     "downloadUrl": "https://liudf0716.github.io/jjpage/asset/juanjuanman-v1.0.0.zip",
+    "featureList": [
+      "小红书试卷自动提取",
+      "一键批量打印",
+      "PDF格式保存",
+      "试卷收藏管理",
+      "支持所有小红书试卷类型"
+    ],
     "author": {
       "@type": "Person",
       "name": "Dengfeng Liu"
@@ -186,6 +188,111 @@
       color: #6a1a1a;
       font-size: 15px;
     }
+    
+    /* 下载引导弹窗 */
+    .download-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+    }
+    .download-modal.active {
+      display: flex;
+    }
+    .download-modal-content {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalSlideIn 0.3s ease-out;
+    }
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .download-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 28px;
+      color: #999;
+      cursor: pointer;
+      line-height: 1;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
+    .download-modal-close:hover {
+      background: #f0f0f0;
+      color: #333;
+    }
+    .download-modal h3 {
+      font-size: 24px;
+      color: #ff2442;
+      margin: 0 0 20px 0;
+    }
+    .download-modal-qr {
+      margin: 20px 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff5f7 0%, #ffe8ec 100%);
+      border-radius: 12px;
+      border: 3px solid #ff2442;
+      box-shadow: 0 8px 24px rgba(255, 36, 66, 0.2);
+    }
+    .download-modal-qr img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .download-modal-text {
+      font-size: 16px;
+      color: #333;
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+    .download-modal-text strong {
+      color: #ff2442;
+      font-size: 18px;
+    }
+    .download-link-subtle {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .download-link-subtle a {
+      color: #999;
+      font-size: 13px;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .download-link-subtle a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    
     .screenshots {
       display: flex;
       flex-wrap: wrap;
@@ -281,43 +388,69 @@
       .actions { display: flex; flex-direction: column; gap: 10px; }
       .btn.primary, .btn.chrome { display: block; width: 100%; text-align: center; margin-left: 0; }
       .btn.primary { padding: 14px 16px; font-size: 18px; }
+      .download-modal-content {
+        padding: 30px 20px;
+      }
+      .download-modal h3 {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- 下载引导弹窗 -->
+  <div id="downloadModal" class="download-modal">
+    <div class="download-modal-content">
+      <span class="download-modal-close" onclick="closeDownloadModal()">&times;</span>
+      <h3>🎉 感谢下载卷卷侠！</h3>
+      <p class="download-modal-text">
+        <strong>加入官方 QQ 群</strong>，获取使用教程、及时更新和技术支持
+      </p>
+      <div class="download-modal-qr">
+        <img src="images/jjx_qq_group.png" alt="卷卷侠官方QQ群">
+      </div>
+      <p class="download-modal-text" style="font-size: 14px; color: #666;">
+        扫描二维码加入我们，与其他家长交流学习资源
+      </p>
+      <div class="download-link-subtle">
+        <a href="asset/juanjuanman-v1.0.0.zip" download="juanjuanman-v1.0.0.zip" onclick="trackDownload()">跳过，直接下载插件 →</a>
+      </div>
+    </div>
+  </div>
+  
   <header role="banner">
-    <img src="images/icon128.png" alt="卷卷侠Logo - 小红书试卷打印Chrome插件图标" width="96" height="96">
-    <h1>卷卷侠</h1>
-    <p>小红书试卷一键打印插件 — 让打印学习卷子更高效</p>
+    <img src="images/icon128.png" alt="卷卷侠Logo - 小红书试卷提取打印Chrome插件" width="96" height="96">
+    <h1>卷卷侠 - 小红书试卷提取打印工具</h1>
+    <p>专业的小红书试卷提取打印插件 — 一键提取打印学习试卷更高效</p>
   </header>
 
   <main role="main">
     <section id="intro" itemscope itemtype="https://schema.org/AboutPage">
-      <h2>为什么需要卷卷侠？</h2>
+      <h2>为什么需要小红书试卷提取打印工具？</h2>
       <p itemprop="description">
-        在小红书上，许多教育博主分享了大量优质学校的考试卷和答案，
-        但这些卷子往往是以图片的形式发布，家长要打印时十分麻烦，
+        在小红书上，许多教育博主分享了大量优质学校的考试试卷和答案，
+        但这些试卷往往是以图片形式发布，家长想要提取打印小红书试卷时十分麻烦，
         需要一张张保存、排版、粘贴到 Word 后才能打印。
       </p>
       <p>
-        <strong>卷卷侠</strong> 解决了这个痛点：它是一款 Chrome 浏览器插件，
-        能自动识别帖子中的试卷图片，一键打印或保存为 PDF，
-        让家长可以轻松打印孩子需要的练习卷。
+        <strong>卷卷侠小红书试卷提取打印工具</strong>完美解决了这个痛点：它是一款专业的Chrome浏览器插件，
+        能自动提取识别小红书帖子中的试卷图片，支持批量提取、一键打印或保存为PDF，
+        让家长轻松完成小红书试卷提取打印，为孩子准备学习资料。
       </p>
     </section>
 
     <section id="features">
-      <h2>核心功能</h2>
+      <h2>核心功能 - 小红书试卷提取打印一站式解决</h2>
       <ul>
-        <li>📸 自动识别小红书帖子中的所有试卷图片</li>
-        <li>🖨️ 一键打印或保存为 PDF 文件</li>
-        <li>⭐ 支持收藏功能，建立自己的卷子库</li>
-        <li>📂 可将卷子分目录管理、快速跳转原帖</li>
+        <li>📸 智能提取：自动识别并批量提取小红书帖子中的所有试卷图片</li>
+        <li>🖨️ 一键打印：提取后可直接打印，或保存为 PDF 文件便于分享</li>
+        <li>⭐ 收藏管理：支持收藏功能，建立个人小红书试卷资源库</li>
+        <li>📂 分类整理：可将提取的试卷分目录管理、快速跳转原帖</li>
       </ul>
 
       <div class="actions">
         <!-- 重点突出：把下载按钮放在前面并设计为主按钮 -->
-        <a class="btn primary" href="asset/juanjuanman-v1.0.0.zip" download="juanjuanman-v1.0.0.zip" title="下载离线安装包 v1.0.0">立即下载离线安装包 v1.0.0</a>
+        <button class="btn primary" onclick="showDownloadModal()" title="下载离线安装包 v1.0.0">立即下载离线安装包 v1.0.0</button>
 
         <!-- Chrome 商店按钮显示为禁用状态（页面 UI 上不可点击），并说明未上架 -->
         <button class="btn chrome disabled" aria-disabled="true" disabled title="尚未上架 Chrome 网上应用店，敬请期待">
@@ -332,23 +465,23 @@
     </section>
 
     <section id="tutorial">
-      <h2>使用方法</h2>
+      <h2>如何使用小红书试卷提取打印工具</h2>
       
       <div class="video-container">
-        <p>📹 视频教程：快速了解如何使用卷卷侠</p>
+        <p>📹 视频教程：快速了解如何提取打印小红书试卷</p>
         <video controls preload="metadata" poster="images/video_face.png">
           <source src="video/jjx_video.mp4" type="video/mp4">
           您的浏览器不支持视频播放，请升级浏览器或<a href="video/jjx_video.mp4" download>下载视频</a>观看。
         </video>
       </div>
 
-      <p style="margin-top: 24px; font-weight: 600;">📝 详细步骤：</p>
+      <p style="margin-top: 24px; font-weight: 600;">📝 小红书试卷提取打印详细步骤：</p>
       <ol>
         <li>打开小红书网页版，进入含有试卷图片的帖子；</li>
         <li>点击浏览器右上角的「卷卷侠」图标；</li>
-        <li>插件会自动识别并提取所有图片；</li>
-        <li>用户可预览、打印或保存为 PDF；</li>
-        <li>还可将试卷收藏到「收藏夹」，下次直接访问。</li>
+        <li>插件会自动提取识别所有试卷图片；</li>
+        <li>预览提取的试卷，可一键打印或保存为 PDF；</li>
+        <li>还可将提取的试卷收藏到「收藏夹」，方便下次查找打印。</li>
       </ol>
     </section>
 
@@ -405,8 +538,8 @@
   </main>
 
   <footer role="contentinfo">
-    <p>© 2025 卷卷侠 ｜ Made with ❤️ by Dengfeng Liu</p>
-    <p><small>关键词：小红书打印插件、试卷打印工具、Chrome扩展、学习资料管理</small></p>
+    <p>© 2025 卷卷侠 - 小红书试卷提取打印工具 ｜ Made with ❤️ by Dengfeng Liu</p>
+    <p><small>核心关键词：小红书试卷提取打印、小红书试卷打印工具、试卷提取插件、Chrome试卷打印扩展、学习资料提取</small></p>
     
     <!-- 不蒜子访问统计显示 -->
     <div class="site-stats">
@@ -424,5 +557,67 @@
       </span>
     </div>
   </footer>
+
+  <script>
+    // 显示下载引导弹窗
+    function showDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // 防止背景滚动
+      
+      // Google Analytics 事件追踪
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'download_modal_show', {
+          'event_category': 'engagement',
+          'event_label': 'download_button_click'
+        });
+      }
+    }
+
+    // 关闭下载引导弹窗
+    function closeDownloadModal() {
+      const modal = document.getElementById('downloadModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // 恢复滚动
+      
+      // Google Analytics 事件追踪
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'download_modal_close', {
+          'event_category': 'engagement',
+          'event_label': 'modal_close_button'
+        });
+      }
+    }
+
+    // 跟踪实际下载
+    function trackDownload() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'download', {
+          'event_category': 'engagement',
+          'event_label': 'direct_download_link',
+          'value': 1
+        });
+      }
+      
+      // 延迟关闭弹窗，让下载开始
+      setTimeout(function() {
+        closeDownloadModal();
+      }, 500);
+    }
+
+    // 点击弹窗外部区域关闭
+    document.getElementById('downloadModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeDownloadModal();
+      }
+    });
+
+    // ESC 键关闭弹窗
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeDownloadModal();
+      }
+    });
+  </script>
 </body>
 </html>
