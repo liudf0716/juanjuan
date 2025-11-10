@@ -144,6 +144,27 @@
       font-weight: 600;
       margin-top: 12px;
     }
+    .video-container {
+      margin: 24px 0;
+      text-align: center;
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .video-container video {
+      max-width: 100%;
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .video-container p {
+      font-size: 15px;
+      color: #666;
+      margin-top: 12px;
+      margin-bottom: 16px;
+    }
     footer {
       text-align: center;
       color: #777;
@@ -215,6 +236,16 @@
 
     <section id="tutorial">
       <h2>使用方法</h2>
+      
+      <div class="video-container">
+        <p>📹 视频教程：快速了解如何使用卷卷侠</p>
+        <video controls preload="metadata" poster="images/icon128.png">
+          <source src="video/jjx_video.mp4" type="video/mp4">
+          您的浏览器不支持视频播放，请升级浏览器或<a href="video/jjx_video.mp4" download>下载视频</a>观看。
+        </video>
+      </div>
+
+      <p style="margin-top: 24px; font-weight: 600;">📝 详细步骤：</p>
       <ol>
         <li>打开小红书网页版，进入含有试卷图片的帖子；</li>
         <li>点击浏览器右上角的「卷卷侠」图标；</li>
