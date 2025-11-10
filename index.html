@@ -49,31 +49,63 @@
       line-height: 1.8;
       font-size: 17px;
     }
+
+    /* 基础按钮样式 */
     .btn {
       display: inline-block;
-      background: #ff2442;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
       text-decoration: none;
+      border-radius: 10px;
       font-size: 16px;
-      font-weight: bold;
-      margin-top: 10px;
-      transition: 0.2s;
+      font-weight: 700;
+      transition: 0.18s ease;
+      line-height: 1;
+      vertical-align: middle;
     }
-    .btn:hover {
-      background: #ff4c66;
+
+    /* 重点下载按钮（主按钮）*/
+    .btn.primary {
+      background: linear-gradient(90deg,#ff2442,#ff677d);
+      color: #fff;
+      padding: 14px 28px;
+      box-shadow: 0 6px 18px rgba(255,36,66,0.18);
+      border: none;
     }
-    /* 次要按钮（下载）样式 */
-    .btn.secondary {
-      background: #fff;
-      color: #ff2442;
-      border: 2px solid #ff2442;
+    .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,36,66,0.20); }
+
+    /* 次要（Chrome 商店）- 显示为禁用状态 */
+    .btn.chrome {
+      background: #f3f4f6;
+      color: #9aa0a6;
+      padding: 12px 20px;
+      border: 1px solid #e6e7e9;
       margin-left: 12px;
-      box-shadow: none;
     }
-    .btn.secondary:hover {
-      background: #fff0f1;
+    .btn.chrome[disabled],
+    .btn.chrome.disabled {
+      cursor: not-allowed;
+      opacity: 0.85;
+      pointer-events: none; /* 防止点击 */
+    }
+    .btn.chrome .hint {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 13px;
+      color: #b0b7bd;
+      vertical-align: middle;
+    }
+
+    .actions {
+      margin-top: 10px;
+    }
+
+    .notice {
+      background: #fff6f7;
+      border-left: 4px solid #ff2442;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-top: 12px;
+      color: #6a1a1a;
+      font-size: 15px;
     }
     .screenshots {
       display: flex;
@@ -93,25 +125,18 @@
       padding: 20px;
       border-top: 1px solid #eee;
     }
-    .notice {
-      background: #fff6f7;
-      border-left: 4px solid #ff2442;
-      padding: 12px 16px;
-      border-radius: 6px;
-      margin-top: 12px;
-      color: #6a1a1a;
-      font-size: 15px;
-    }
     ol.install-steps {
       line-height: 1.9;
       font-size: 16px;
       margin-left: 1.1em;
     }
+
     @media (max-width: 600px) {
       header h1 { font-size: 28px; }
       .screenshots img { width: 100%; }
-      .btn { display: block; width: 100%; text-align: center; }
-      .btn.secondary { margin-left: 0; margin-top: 12px; }
+      .actions { display: flex; flex-direction: column; gap: 10px; }
+      .btn.primary, .btn.chrome { display: block; width: 100%; text-align: center; margin-left: 0; }
+      .btn.primary { padding: 14px 16px; font-size: 18px; }
     }
   </style>
 </head>
@@ -145,37 +170,23 @@
         <li>⭐ 支持收藏功能，建立自己的卷子库</li>
         <li>📂 可将卷子分目录管理、快速跳转原帖</li>
       </ul>
-      <div>
-        <a class="btn" href="https://chrome.google.com/webstore" target="_blank" rel="noopener">前往 Chrome 商店安装</a>
-        <!-- 下载离线安装包按钮：直接下载 assets 目录下的 zip 文件 -->
-        <a class="btn secondary" href="assets/juanjuan.zip" download="juanjuan.zip" title="下载离线安装包">下载离线安装包</a>
+
+      <div class="actions">
+        <!-- 重点突出：把下载按钮放在前面并设计为主按钮 -->
+        <a class="btn primary" href="assets/juanjuan.zip" download="juanjuan.zip" title="下载离线安装包">立即下载离线安装包</a>
+
+        <!-- Chrome 商店按钮显示为禁用状态（页面 UI 上不可点击），并说明未上架 -->
+        <button class="btn chrome disabled" aria-disabled="true" disabled title="尚未上架 Chrome 网上应用店">
+          Chrome 商店（未上架）
+          <span class="hint">暂不可用</span>
+        </button>
       </div>
+
       <div class="notice" aria-live="polite">
-        提示：下载后请参考下面的“离线安装教程”进行本地安装（适用于无法直接使用 Chrome 商店的环境）。
+        提示：当前插件尚未上架 Chrome 网上应用店，商店安装按钮已被禁用。你可以直接下载离线安装包并按照下面教程手动安装。
       </div>
     </section>
 
-    <section id="manual-install">
-      <h2>离线安装 / 本地安装教程</h2>
-      <p>如果无法直接通过 Chrome 网上应用店安装，可以下载我们提供的离线安装包并按以下步骤手动安装（适用于 Windows / macOS / Linux 的 Chrome 浏览器）：</p>
-      <ol class="install-steps">
-        <li>点击上方“下载离线安装包”按钮，保存文件到本地（默认名：juanjuan.zip）。</li>
-        <li>将下载好的 ZIP 包解压到一个文件夹（例如：juanjuan-extension/）。</li>
-        <li>打开 Chrome 浏览器，输入 chrome://extensions 并回车，进入扩展程序页面；</li>
-        <li>右上角打开“开发者模式”（Developer mode 或 开发者模式）；</li>
-        <li>点击“加载已解压的扩展程序”（Load unpacked），然后选择第 2 步中解压得到的文件夹（juanjuan-extension/）；</li>
-        <li>等待 Chrome 加载扩展程序，加载完成后即可在浏览器工具栏看到卷卷侠图标并开始使用；</li>
-      </ol>
-      <p>
-        注意事项：
-        <ul>
-          <li>请确保解压后的文件夹中包含 manifest.json（即扩展的源文件）；</li>
-          <li>Chrome 的安全策略可能会阻止一些功能，开发者模式仅用于手动安装和测试；</li>
-          <li>若要长期使用或自动更新，请优先通过 Chrome 网上应用店安装正式版。</li>
-        </ul>
-      </p>
-    </section>
-    
     <section id="tutorial">
       <h2>使用方法</h2>
       <ol>
@@ -187,7 +198,26 @@
       </ol>
     </section>
 
-    
+    <section id="manual-install">
+      <h2>离线安装 / 本地安装教程</h2>
+      <p>如果无法直接通过 Chrome 网上应用店安装，可以下载我们提供的离线安装包并按以下步骤手动安装（适用于 Windows / macOS / Linux 的 Chrome 浏览器）：</p>
+      <ol class="install-steps">
+        <li>点击上方“立即下载离线安装包”按钮，保存文件到本地（默认名：juanjuan.zip）。</li>
+        <li>将下载好的 ZIP 包解压到一个文件夹（例如：juanjuan-extension/）。</li>
+        <li>打开 Chrome 浏览器，输入 chrome://extensions 并回车，进入扩展程序页面；</li>
+        <li>右上角打开“开发者模式”（Developer mode 或 开发者模式）；</li>
+        <li>点击“加载已解压的扩展程序”（Load unpacked），然后选择第 2 步中解压得到的文件夹（juanjuan-extension/）；</li>
+        <li>等待 Chrome 加载扩展程序，加载完成后即可在浏览器工具栏看到卷卷侠图标并开始使用；</li>
+      </ol>
+      <p>
+        注意事项：
+        <ul>
+          <li>请确保解压后的文件夹中包含 manifest.json（即扩展的源文件）；</li>
+          <li>Chrome 的安全策略可能会阻止一些功能，开发者模式仅用于手动安装和测试；</li>
+          <li>若要长期使用或自动更新，请优先通过 Chrome 网上应用店安装正式版（上架后我们会恢复商店安装入口）。</li>
+        </ul>
+      </p>
+    </section>
 
     <section id="screenshots">
       <h2>界面预览</h2>
