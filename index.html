@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>卷卷侠｜小红书试卷一键打印插件</title>
+  <link rel="icon" href="images/icon128.png">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft Yahei", "PingFang SC";
+      margin: 0;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #ff2442, #ff677d);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      height: 96px;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      border-left: 4px solid #ff2442;
+      padding-left: 12px;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    ul {
+      line-height: 1.8;
+      font-size: 17px;
+    }
+    .btn {
+      display: inline-block;
+      background: #ff2442;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #ff4c66;
+    }
+    .screenshots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .screenshots img {
+      width: 420px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+      padding: 20px;
+      border-top: 1px solid #eee;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 28px; }
+      .screenshots img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/icon128.png" alt="卷卷侠图标">
+    <h1>卷卷侠</h1>
+    <p>小红书试卷一键打印插件 — 让打印学习卷子更高效</p>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>为什么需要卷卷侠？</h2>
+      <p>
+        在小红书上，许多教育博主分享了大量优质学校的考试卷和答案，
+        但这些卷子往往是以图片的形式发布，家长要打印时十分麻烦，
+        需要一张张保存、排版、粘贴到 Word 后才能打印。
+      </p>
+      <p>
+        <b>卷卷侠</b> 解决了这个痛点：它是一款 Chrome 浏览器插件，
+        能自动识别帖子中的试卷图片，一键打印或保存为 PDF，
+        让家长可以轻松打印孩子需要的练习卷。
+      </p>
+    </section>
+
+    <section id="features">
+      <h2>核心功能</h2>
+      <ul>
+        <li>📸 自动识别小红书帖子中的所有试卷图片</li>
+        <li>🖨️ 一键打印或保存为 PDF 文件</li>
+        <li>⭐ 支持收藏功能，建立自己的卷子库</li>
+        <li>📂 可将卷子分目录管理、快速跳转原帖</li>
+      </ul>
+      <a class="btn" href="https://chrome.google.com/webstore" target="_blank">前往 Chrome 商店安装</a>
+    </section>
+
+    <section id="tutorial">
+      <h2>使用方法</h2>
+      <ol>
+        <li>打开小红书网页版，进入含有试卷图片的帖子；</li>
+        <li>点击浏览器右上角的「卷卷侠」图标；</li>
+        <li>插件会自动识别并提取所有图片；</li>
+        <li>用户可预览、打印或保存为 PDF；</li>
+        <li>还可将试卷收藏到「收藏夹」，下次直接访问。</li>
+      </ol>
+    </section>
+
+    <section id="screenshots">
+      <h2>界面预览</h2>
+      <div class="screenshots">
+        <img src="images/ui_print.jpg" alt="打印助手界面截图">
+        <img src="images/ui_favorite.jpg" alt="收藏夹界面截图">
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>作者的话</h2>
+      <p>
+        在孩子的学习过程中，我发现「刷卷子」能显著提升学习效率。
+        相比单题练习，卷子自带时间限制与情境感，能有效帮助孩子集中注意力，
+        同时方便家长监督进度。卷卷侠正是为此而生。
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 卷卷侠 ｜ Made with ❤️ by Piggy Liu</p>
+  </footer>
+</body>
+</html>
