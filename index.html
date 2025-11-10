@@ -3,8 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>卷卷侠｜小红书试卷一键打印插件</title>
+  
+  <!-- SEO 基础标签 -->
+  <title>卷卷侠 - 小红书试卷打印插件 | 一键打印学习资料 Chrome 扩展</title>
+  <meta name="description" content="卷卷侠是一款免费的Chrome浏览器插件，帮助家长快速提取、打印小红书上的学习卷子和试卷图片。支持一键打印、PDF保存、收藏管理功能，让孩子学习更高效。">
+  <meta name="keywords" content="小红书打印,试卷打印,Chrome插件,浏览器扩展,学习资料,PDF保存,卷卷侠,教育工具,家长助手">
+  <meta name="author" content="Dengfeng Liu">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://liudf0716.github.io/jjpage/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://liudf0716.github.io/jjpage/">
+  <meta property="og:title" content="卷卷侠 - 小红书试卷打印插件">
+  <meta property="og:description" content="免费Chrome插件，一键提取打印小红书学习卷子，支持PDF保存和收藏管理。">
+  <meta property="og:image" content="https://liudf0716.github.io/jjpage/images/icon128.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://liudf0716.github.io/jjpage/">
+  <meta property="twitter:title" content="卷卷侠 - 小红书试卷打印插件">
+  <meta property="twitter:description" content="免费Chrome插件，一键提取打印小红书学习卷子，支持PDF保存和收藏管理。">
+  <meta property="twitter:image" content="https://liudf0716.github.io/jjpage/images/icon128.png">
+  
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "卷卷侠",
+    "applicationCategory": "BrowserExtension",
+    "operatingSystem": "Chrome",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY"
+    },
+    "description": "免费的Chrome浏览器插件，帮助家长快速提取、打印小红书上的学习卷子和试卷图片。",
+    "softwareVersion": "1.0.0",
+    "downloadUrl": "https://liudf0716.github.io/jjpage/asset/juanjuanman-v1.0.0.zip",
+    "author": {
+      "@type": "Person",
+      "name": "Dengfeng Liu"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "1"
+    }
+  }
+  </script>
+  
   <link rel="icon" href="images/icon128.png">
+  <link rel="apple-touch-icon" href="images/icon128.png">
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft Yahei", "PingFang SC";
@@ -188,22 +239,22 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="images/icon128.png" alt="卷卷侠图标">
+  <header role="banner">
+    <img src="images/icon128.png" alt="卷卷侠Logo - 小红书试卷打印Chrome插件图标" width="96" height="96">
     <h1>卷卷侠</h1>
     <p>小红书试卷一键打印插件 — 让打印学习卷子更高效</p>
   </header>
 
-  <main>
-    <section id="intro">
+  <main role="main">
+    <section id="intro" itemscope itemtype="https://schema.org/AboutPage">
       <h2>为什么需要卷卷侠？</h2>
-      <p>
+      <p itemprop="description">
         在小红书上，许多教育博主分享了大量优质学校的考试卷和答案，
         但这些卷子往往是以图片的形式发布，家长要打印时十分麻烦，
         需要一张张保存、排版、粘贴到 Word 后才能打印。
       </p>
       <p>
-        <b>卷卷侠</b> 解决了这个痛点：它是一款 Chrome 浏览器插件，
+        <strong>卷卷侠</strong> 解决了这个痛点：它是一款 Chrome 浏览器插件，
         能自动识别帖子中的试卷图片，一键打印或保存为 PDF，
         让家长可以轻松打印孩子需要的练习卷。
       </p>
@@ -283,8 +334,8 @@
     <section id="screenshots">
       <h2>界面预览</h2>
       <div class="screenshots">
-        <img src="images/ui_print.png" alt="打印助手界面截图">
-        <img src="images/ui_favorite.png" alt="收藏夹界面截图">
+        <img src="images/ui_print.png" alt="卷卷侠打印助手界面截图 - 显示图片提取和打印功能" width="420" height="auto" loading="lazy">
+        <img src="images/ui_favorite.png" alt="卷卷侠收藏夹界面截图 - 显示分类管理功能" width="420" height="auto" loading="lazy">
       </div>
     </section>
 
@@ -301,14 +352,15 @@
       <h2>加入交流群</h2>
       <div class="qq-group-container">
         <p>💬 欢迎加入卷卷侠官方 QQ 交流群，与其他家长一起交流学习资源、使用技巧</p>
-        <img src="images/jjx_qq_group.png" alt="卷卷侠官方QQ群二维码">
+        <img src="images/jjx_qq_group.png" alt="卷卷侠官方QQ交流群二维码 - 扫码加入家长学习交流社群" width="300" height="auto" loading="lazy">
         <p class="group-tip">扫描二维码或搜索群号加入我们</p>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025 卷卷侠 ｜ Made with ❤️ by Dengfeng Liu</p>
+    <p><small>关键词：小红书打印插件、试卷打印工具、Chrome扩展、学习资料管理</small></p>
   </footer>
 </body>
 </html>

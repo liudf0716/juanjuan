@@ -1,0 +1,10 @@
+# robots.txt for 卷卷侠官网
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://liudf0716.github.io/jjpage/sitemap.xml
+
+# 禁止爬取的资源
+Disallow: /asset/
+Disallow: /*.zip$
