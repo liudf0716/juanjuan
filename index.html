@@ -173,10 +173,10 @@
 
       <div class="actions">
         <!-- 重点突出：把下载按钮放在前面并设计为主按钮 -->
-        <a class="btn primary" href="assets/juanjuan.zip" download="juanjuan.zip" title="下载离线安装包">立即下载离线安装包</a>
+        <a class="btn primary" href="asset/juanjuanman-v1.0.0.zip" download="juanjuanman-v1.0.0.zip" title="下载离线安装包 v1.0.0">立即下载离线安装包 v1.0.0</a>
 
         <!-- Chrome 商店按钮显示为禁用状态（页面 UI 上不可点击），并说明未上架 -->
-        <button class="btn chrome disabled" aria-disabled="true" disabled title="尚未上架 Chrome 网上应用店">
+        <button class="btn chrome disabled" aria-disabled="true" disabled title="尚未上架 Chrome 网上应用店，敬请期待">
           Chrome 商店（未上架）
           <span class="hint">暂不可用</span>
         </button>
@@ -202,13 +202,17 @@
       <h2>离线安装 / 本地安装教程</h2>
       <p>如果无法直接通过 Chrome 网上应用店安装，可以下载我们提供的离线安装包并按以下步骤手动安装（适用于 Windows / macOS / Linux 的 Chrome 浏览器）：</p>
       <ol class="install-steps">
-        <li>点击上方“立即下载离线安装包”按钮，保存文件到本地（默认名：juanjuan.zip）。</li>
+        <li>点击上方"立即下载离线安装包"按钮，保存文件到本地（默认名：juanjuan.zip）。</li>
         <li>将下载好的 ZIP 包解压到一个文件夹（例如：juanjuan-extension/）。</li>
         <li>打开 Chrome 浏览器，输入 chrome://extensions 并回车，进入扩展程序页面；</li>
-        <li>右上角打开“开发者模式”（Developer mode 或 开发者模式）；</li>
-        <li>点击“加载未打包的扩展程序”（Load unpacked），然后选择第 2 步中解压得到的文件夹（juanjuan-extension/）；</li>
+        <li>右上角打开"开发者模式"（Developer mode 或 开发者模式）；</li>
+        <li>点击"加载未打包的扩展程序"（Load unpacked），然后选择第 2 步中解压得到的文件夹（juanjuan-extension/）；</li>
         <li>等待 Chrome 加载扩展程序，加载完成后即可在浏览器工具栏看到卷卷侠图标并开始使用；</li>
       </ol>
+      
+      <div class="screenshots" style="margin-top: 24px;">
+        <img src="images/externsion_install.png" alt="Chrome扩展安装步骤示意图" style="width: 100%; max-width: 800px;">
+      </div>
       <p>
         注意事项：
         <ul>
