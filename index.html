@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- SEO 基础标签 -->
-  <title>小红书试卷提取打印工具 - 卷卷侠 | 免费Chrome插件一键提取打印试卷</title>
-  <meta name="description" content="卷卷侠是专业的小红书试卷提取打印工具，免费Chrome插件帮助家长一键提取、打印小红书上的学习试卷和答案图片。支持批量提取、自动识别、PDF保存，让小红书试卷打印更简单高效。">
-  <meta name="keywords" content="小红书试卷提取打印,小红书试卷打印,小红书提取试卷,试卷提取工具,小红书打印插件,试卷打印工具,Chrome插件,卷卷侠,学习资料提取,PDF保存">
+  <title>小红书卷卷侠 - 卷卷侠 | 小红书试卷提取打印工具 | 免费Chrome插件一键提取打印试卷</title>
+  <meta name="description"
+    content="小红书卷卷侠（卷卷侠）是专业的小红书试卷提取打印工具，免费Chrome插件帮助家长一键提取、打印小红书上的学习试卷和答案图片。支持批量提取、自动识别、PDF保存，让小红书试卷打印更简单高效。">
+  <meta name="keywords" content="小红书卷卷侠,小红书试卷提取打印,小红书试卷打印,小红书提取试卷,试卷提取工具,小红书打印插件,试卷打印工具,Chrome插件,卷卷侠,学习资料提取,PDF保存">
   <meta name="author" content="Dengfeng Liu">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://liudf0716.github.io/jjpage/">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://liudf0716.github.io/jjpage/">
-  <meta property="og:title" content="小红书试卷提取打印工具 - 卷卷侠">
+  <meta property="og:title" content="小红书卷卷侠 - 卷卷侠 | 小红书试卷提取打印工具">
   <meta property="og:description" content="专业的小红书试卷提取打印Chrome插件，一键提取打印小红书学习试卷...">
   <meta property="og:image" content="https://liudf0716.github.io/jjpage/images/icon128.png">
-  
+
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://liudf0716.github.io/jjpage/">
   <meta property="twitter:title" content="小红书试卷提取打印工具 - 卷卷侠">
   <meta property="twitter:description" content="专业的小红书试卷提取打印Chrome插件，一键提取打印小红书学习试卷...">
   <meta property="twitter:image" content="https://liudf0716.github.io/jjpage/images/icon128.png">
-  
+
   <!-- 结构化数据 (JSON-LD) -->
   <script type="application/ld+json">
   {
@@ -55,514 +57,224 @@
     }
   }
   </script>
-  
+
   <!-- Google Analytics 4 -->
-  <!-- 替换 G-XXXXXXXXXX 为你的 Google Analytics 测量 ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4VL0VBVJL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-T4VL0VBVJL');
   </script>
-  
+
   <!-- 百度统计 -->
   <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
       var hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?d62fa52f65d02666873209cee352e6ff";
-      var s = document.getElementsByTagName("script")[0]; 
+      var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
-  
+
   <link rel="icon" href="images/icon128.png">
   <link rel="apple-touch-icon" href="images/icon128.png">
-  
+  <link rel="stylesheet" href="css/style.css">
+
   <!-- 不蒜子访问统计 -->
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft Yahei", "PingFang SC";
-      margin: 0;
-      background: #fafafa;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(90deg, #ff2442, #ff677d);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header img {
-      height: 96px;
-      margin-bottom: 10px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      letter-spacing: 1px;
-    }
-    header p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    h2 {
-      border-left: 4px solid #ff2442;
-      padding-left: 12px;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    ul {
-      line-height: 1.8;
-      font-size: 17px;
-    }
-
-    /* 基础按钮样式 */
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 16px;
-      font-weight: 700;
-      transition: 0.18s ease;
-      line-height: 1;
-      vertical-align: middle;
-    }
-
-    /* 重点下载按钮（主按钮）*/
-    .btn.primary {
-      background: linear-gradient(90deg,#ff2442,#ff677d);
-      color: #fff;
-      padding: 14px 28px;
-      box-shadow: 0 6px 18px rgba(255,36,66,0.18);
-      border: none;
-    }
-    .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,36,66,0.20); }
-
-    /* 次要（Chrome 商店）- 显示为禁用状态 */
-    .btn.chrome {
-      background: #f3f4f6;
-      color: #9aa0a6;
-      padding: 12px 20px;
-      border: 1px solid #e6e7e9;
-      margin-left: 12px;
-    }
-    .btn.chrome[disabled],
-    .btn.chrome.disabled {
-      cursor: not-allowed;
-      opacity: 0.85;
-      pointer-events: none; /* 防止点击 */
-    }
-    .btn.chrome .hint {
-      display: inline-block;
-      margin-left: 8px;
-      font-size: 13px;
-      color: #b0b7bd;
-      vertical-align: middle;
-    }
-
-    .actions {
-      margin-top: 10px;
-    }
-
-    .notice {
-      background: #fff6f7;
-      border-left: 4px solid #ff2442;
-      padding: 12px 16px;
-      border-radius: 6px;
-      margin-top: 12px;
-      color: #6a1a1a;
-      font-size: 15px;
-    }
-    
-    /* 下载引导弹窗 */
-    .download-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(5px);
-    }
-    .download-modal.active {
-      display: flex;
-    }
-    .download-modal-content {
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      position: relative;
-      animation: modalSlideIn 0.3s ease-out;
-    }
-    @keyframes modalSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .download-modal-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 28px;
-      color: #999;
-      cursor: pointer;
-      line-height: 1;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: all 0.2s;
-    }
-    .download-modal-close:hover {
-      background: #f0f0f0;
-      color: #333;
-    }
-    .download-modal h3 {
-      font-size: 24px;
-      color: #ff2442;
-      margin: 0 0 20px 0;
-    }
-    .download-modal-qr {
-      margin: 20px 0;
-      padding: 20px;
-      background: linear-gradient(135deg, #fff5f7 0%, #ffe8ec 100%);
-      border-radius: 12px;
-      border: 3px solid #ff2442;
-      box-shadow: 0 8px 24px rgba(255, 36, 66, 0.2);
-    }
-    .download-modal-qr img {
-      width: 100%;
-      max-width: 280px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .download-modal-text {
-      font-size: 16px;
-      color: #333;
-      margin: 15px 0;
-      line-height: 1.6;
-    }
-    .download-modal-text strong {
-      color: #ff2442;
-      font-size: 18px;
-    }
-    .download-link-subtle {
-      margin-top: 25px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-    }
-    .download-link-subtle a {
-      color: #999;
-      font-size: 13px;
-      text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-    .download-link-subtle a:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
-    
-    .screenshots {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .screenshots img {
-      width: 420px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .qq-group-container {
-      text-align: center;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin-top: 20px;
-    }
-    .qq-group-container img {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 16px;
-    }
-    .qq-group-container p {
-      font-size: 16px;
-      color: #555;
-      margin: 12px 0;
-    }
-    .qq-group-container .group-tip {
-      font-size: 14px;
-      color: #ff2442;
-      font-weight: 600;
-      margin-top: 12px;
-    }
-    .video-container {
-      margin: 24px 0;
-      text-align: center;
-      background: #fff;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-    .video-container video {
-      max-width: 100%;
-      width: 100%;
-      max-width: 800px;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    }
-    .video-container p {
-      font-size: 15px;
-      color: #666;
-      margin-top: 12px;
-      margin-bottom: 16px;
-    }
-    footer {
-      text-align: center;
-      color: #777;
-      font-size: 14px;
-      padding: 20px;
-      border-top: 1px solid #eee;
-    }
-    .site-stats {
-      margin-top: 12px;
-      padding: 10px;
-      font-size: 13px;
-      color: #999;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .site-stats span {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .site-stats .stat-icon {
-      color: #ff2442;
-    }
-    ol.install-steps {
-      line-height: 1.9;
-      font-size: 16px;
-      margin-left: 1.1em;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 28px; }
-      .screenshots img { width: 100%; }
-      .actions { display: flex; flex-direction: column; gap: 10px; }
-      .btn.primary, .btn.chrome { display: block; width: 100%; text-align: center; margin-left: 0; }
-      .btn.primary { padding: 14px 16px; font-size: 18px; }
-      .download-modal-content {
-        padding: 30px 20px;
-      }
-      .download-modal h3 {
-        font-size: 20px;
-      }
-    }
-  </style>
 </head>
+
 <body>
   <!-- 下载引导弹窗 -->
-  <div id="downloadModal" class="download-modal">
-    <div class="download-modal-content">
-      <span class="download-modal-close" onclick="closeDownloadModal()">&times;</span>
-      <h3>🎉 感谢下载卷卷侠！</h3>
-      <p class="download-modal-text">
+  <div id="downloadModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-close" onclick="closeDownloadModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </div>
+      <h3 style="font-size: 24px; margin: 0 0 16px; color: var(--xhs-text-primary);">🎉 感谢下载卷卷侠！</h3>
+      <p style="color: var(--xhs-text-secondary); margin-bottom: 24px;">
         <strong>加入官方 QQ 群</strong>，获取使用教程、及时更新和技术支持
       </p>
-      <div class="download-modal-qr">
+      <div class="qr-box">
         <img src="images/jjx_qq_group.png" alt="卷卷侠官方QQ群">
       </div>
-      <p class="download-modal-text" style="font-size: 14px; color: #666;">
+      <p style="font-size: 14px; color: var(--xhs-text-tertiary); margin-bottom: 24px;">
         扫描二维码加入我们，与其他家长交流学习资源
       </p>
-      <div class="download-link-subtle">
-        <a href="asset/juanjuanman-v1.0.0.zip" download="juanjuanman-v1.0.0.zip" onclick="trackDownload()">跳过，直接下载插件 →</a>
+      <div style="border-top: 1px solid var(--xhs-border); padding-top: 20px;">
+        <a href="asset/juanjuanman-v1.0.0.zip" download="juanjuanman-v1.0.0.zip" onclick="trackDownload()"
+          style="color: var(--xhs-text-tertiary); text-decoration: none; font-size: 14px;">跳过，直接下载插件 →</a>
       </div>
     </div>
   </div>
-  
-  <header role="banner">
-    <img src="images/icon128.png" alt="卷卷侠Logo - 小红书试卷提取打印Chrome插件" width="96" height="96">
-    <h1>卷卷侠 - 小红书试卷提取打印工具</h1>
-    <p>专业的小红书试卷提取打印插件 — 一键提取打印学习试卷更高效</p>
+
+  <header>
+    <div class="header-content">
+      <div class="logo-area">
+        <img src="images/icon128.png" alt="卷卷侠Logo">
+        <h1>卷卷侠</h1>
+      </div>
+      <div class="header-actions">
+        <button class="btn primary" onclick="showDownloadModal()">立即下载</button>
+      </div>
+    </div>
   </header>
 
-  <main role="main">
-    <section id="intro" itemscope itemtype="https://schema.org/AboutPage">
-      <h2>为什么需要小红书试卷提取打印工具？</h2>
-      <p itemprop="description">
-        在小红书上，许多教育博主分享了大量优质学校的考试试卷和答案，
-        但这些试卷往往是以图片形式发布，家长想要提取打印小红书试卷时十分麻烦，
-        需要一张张保存、排版、粘贴到 Word 后才能打印。
-      </p>
-      <p>
-        <strong>卷卷侠小红书试卷提取打印工具</strong>完美解决了这个痛点：它是一款专业的Chrome浏览器插件，
-        能自动提取识别小红书帖子中的试卷图片，支持批量提取、一键打印或保存为PDF，
-        让家长轻松完成小红书试卷提取打印，为孩子准备学习资料。
-      </p>
+  <main class="container">
+    <section class="hero-section">
+      <h1 class="hero-title">小红书试卷提取打印工具</h1>
+      <p class="hero-desc">专业的小红书试卷提取打印插件，一键提取、自动识别、批量打印，让家长轻松准备学习资料。</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <button class="btn primary" onclick="showDownloadModal()">
+          <span>下载离线安装包 v1.0.0</span>
+        </button>
+        <button class="btn secondary disabled" title="尚未上架 Chrome 网上应用店">
+          <span>Chrome 商店 (未上架)</span>
+        </button>
+      </div>
+      <div
+        style="margin-top: 16px; font-size: 14px; color: var(--xhs-red); background: #fff0f2; display: inline-block; padding: 8px 16px; border-radius: 8px;">
+        提示：当前插件需下载离线包手动安装
+      </div>
     </section>
 
     <section id="features">
-      <h2>核心功能 - 小红书试卷提取打印一站式解决</h2>
-      <ul>
-        <li>📸 智能提取：自动识别并批量提取小红书帖子中的所有试卷图片</li>
-        <li>🖨️ 一键打印：提取后可直接打印，或保存为 PDF 文件便于分享</li>
-        <li>⭐ 收藏管理：支持收藏功能，建立个人小红书试卷资源库</li>
-        <li>📂 分类整理：可将提取的试卷分目录管理、快速跳转原帖</li>
-      </ul>
-
-      <div class="actions">
-        <!-- 重点突出：把下载按钮放在前面并设计为主按钮 -->
-        <button class="btn primary" onclick="showDownloadModal()" title="下载离线安装包 v1.0.0">立即下载离线安装包 v1.0.0</button>
-
-        <!-- Chrome 商店按钮显示为禁用状态（页面 UI 上不可点击），并说明未上架 -->
-        <button class="btn chrome disabled" aria-disabled="true" disabled title="尚未上架 Chrome 网上应用店，敬请期待">
-          Chrome 商店（未上架）
-          <span class="hint">暂不可用</span>
-        </button>
-      </div>
-
-      <div class="notice" aria-live="polite">
-        提示：当前插件尚未上架 Chrome 网上应用店，商店安装按钮已被禁用。你可以直接下载离线安装包并按照下面教程手动安装。
+      <h2>核心功能</h2>
+      <div class="grid-2">
+        <div class="feature-card">
+          <span class="feature-icon">📸</span>
+          <h3>智能提取</h3>
+          <p>自动识别并批量提取小红书帖子中的所有试卷图片，无需手动截图。</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🖨️</span>
+          <h3>一键打印</h3>
+          <p>提取后可直接打印，或保存为 PDF 文件，排版整齐，方便阅读。</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⭐</span>
+          <h3>收藏管理</h3>
+          <p>支持收藏功能，建立个人小红书试卷资源库，随时查看。</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📂</span>
+          <h3>分类整理</h3>
+          <p>可将提取的试卷分目录管理，快速跳转原帖，井井有条。</p>
+        </div>
       </div>
     </section>
 
     <section id="tutorial">
-      <h2>如何使用小红书试卷提取打印工具</h2>
-      
-      <div class="video-container">
-        <p>📹 视频教程：快速了解如何提取打印小红书试卷</p>
+      <h2>使用教程</h2>
+      <div class="video-wrapper">
         <video controls preload="metadata" poster="images/video_face.png">
           <source src="video/jjx_video.mp4" type="video/mp4">
-          您的浏览器不支持视频播放，请升级浏览器或<a href="video/jjx_video.mp4" download>下载视频</a>观看。
+          您的浏览器不支持视频播放。
         </video>
       </div>
 
-      <p style="margin-top: 24px; font-weight: 600;">📝 小红书试卷提取打印详细步骤：</p>
-      <ol>
-        <li>打开小红书网页版，进入含有试卷图片的帖子；</li>
-        <li>点击浏览器右上角的「卷卷侠」图标；</li>
-        <li>插件会自动提取识别所有试卷图片；</li>
-        <li>预览提取的试卷，可一键打印或保存为 PDF；</li>
-        <li>还可将提取的试卷收藏到「收藏夹」，方便下次查找打印。</li>
-      </ol>
+      <div style="margin-top: 40px;">
+        <h3 style="text-align: center; margin-bottom: 32px;">简单几步，轻松搞定</h3>
+        <ol class="step-list">
+          <li class="step-item">
+            <span class="step-title">打开小红书网页版</span>
+            <span class="step-desc">进入含有试卷图片的帖子页面</span>
+          </li>
+          <li class="step-item">
+            <span class="step-title">点击卷卷侠图标</span>
+            <span class="step-desc">点击浏览器右上角的插件图标，自动提取图片</span>
+          </li>
+          <li class="step-item">
+            <span class="step-title">预览与打印</span>
+            <span class="step-desc">检查提取结果，一键打印或保存为 PDF</span>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <section id="manual-install">
-      <h2>离线安装 / 本地安装教程</h2>
-      <p>如果无法直接通过 Chrome 网上应用店安装，可以下载我们提供的离线安装包并按以下步骤手动安装（适用于 Windows / macOS / Linux 的 Chrome 浏览器）：</p>
-      <ol class="install-steps">
-        <li>点击上方"立即下载离线安装包"按钮，保存文件到本地（默认名：juanjuan.zip）。</li>
-        <li>将下载好的 ZIP 包解压到一个文件夹（例如：juanjuan-extension/）。</li>
-        <li>打开 Chrome 浏览器，输入 chrome://extensions 并回车，进入扩展程序页面；</li>
-        <li>右上角打开"开发者模式"（Developer mode 或 开发者模式）；</li>
-        <li>点击"加载未打包的扩展程序"（Load unpacked），然后选择第 2 步中解压得到的文件夹（juanjuan-extension/）；</li>
-        <li>等待 Chrome 加载扩展程序，加载完成后即可在浏览器工具栏看到卷卷侠图标并开始使用；</li>
-      </ol>
-      
-      <div class="screenshots" style="margin-top: 24px;">
-        <img src="images/externsion_install.png" alt="Chrome扩展安装步骤示意图" style="width: 100%; max-width: 800px;">
+      <h2>安装指南</h2>
+      <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--shadow-card);">
+        <p style="margin-bottom: 24px; color: var(--xhs-text-secondary);">由于 Chrome 商店审核原因，目前需要手动安装离线包：</p>
+        <ol class="step-list">
+          <li class="step-item">
+            <span class="step-title">下载并解压</span>
+            <span class="step-desc">下载安装包并解压到文件夹</span>
+          </li>
+          <li class="step-item">
+            <span class="step-title">打开扩展程序页面</span>
+            <span class="step-desc">在浏览器输入 chrome://extensions 并开启右上角"开发者模式"</span>
+          </li>
+          <li class="step-item">
+            <span class="step-title">加载扩展</span>
+            <span class="step-desc">点击"加载未打包的扩展程序"，选择解压后的文件夹</span>
+          </li>
+        </ol>
+        <div class="screenshot-gallery" style="margin-top: 32px;">
+          <div class="screenshot-card">
+            <img src="images/externsion_install.png" alt="安装步骤">
+          </div>
+        </div>
       </div>
-      <p>
-        注意事项：
-        <ul>
-          <li>请确保解压后的文件夹中包含 manifest.json（即扩展的源文件）；</li>
-          <li>Chrome 的安全策略可能会阻止一些功能，开发者模式仅用于手动安装和测试；</li>
-          <li>若要长期使用或自动更新，请优先通过 Chrome 网上应用店安装正式版（上架后我们会恢复商店安装入口）。</li>
-        </ul>
-      </p>
     </section>
 
     <section id="screenshots">
       <h2>界面预览</h2>
-      <div class="screenshots">
-        <img src="images/ui_print.png" alt="卷卷侠打印助手界面截图 - 显示图片提取和打印功能" width="420" height="auto" loading="lazy">
-        <img src="images/ui_favorite.png" alt="卷卷侠收藏夹界面截图 - 显示分类管理功能" width="420" height="auto" loading="lazy">
+      <div class="screenshot-gallery">
+        <div class="screenshot-card">
+          <img src="images/ui_print.png" alt="打印界面">
+        </div>
+        <div class="screenshot-card">
+          <img src="images/ui_favorite.png" alt="收藏界面">
+        </div>
       </div>
-    </section>
-
-    <section id="about">
-      <h2>作者的话</h2>
-      <p>
-        在孩子的学习过程中，我发现「刷卷子」能显著提升学习效率。
-        相比单题练习，卷子自带时间限制与情境感，能有效帮助孩子集中注意力，
-        同时方便家长监督进度。卷卷侠正是为此而生。
-      </p>
     </section>
 
     <section id="community">
-      <h2>加入交流群</h2>
-      <div class="qq-group-container">
-        <p>💬 欢迎加入卷卷侠官方 QQ 交流群，与其他家长一起交流学习资源、使用技巧</p>
-        <img src="images/jjx_qq_group.png" alt="卷卷侠官方QQ交流群二维码 - 扫码加入家长学习交流社群" width="300" height="auto" loading="lazy">
-        <p class="group-tip">扫描二维码或搜索群号加入我们</p>
+      <h2>加入社群</h2>
+      <div
+        style="text-align: center; background: white; padding: 40px; border-radius: 16px; box-shadow: var(--shadow-card);">
+        <p style="font-size: 18px; margin-bottom: 24px;">欢迎加入卷卷侠官方交流群</p>
+        <img src="images/jjx_qq_group.png" alt="QQ群" style="width: 200px; border-radius: 8px; margin-bottom: 16px;">
+        <p style="color: var(--xhs-text-secondary);">与其他家长一起交流学习资源、使用技巧</p>
       </div>
     </section>
+
     <section id="faq">
-      <h2>常见问题 (FAQ)</h2>
-      <dl>
-        <dt><strong>问：如何获取并使用“卷卷侠”工具？</strong></dt>
-        <dd>答：您可以通过本页面上方的“立即下载离线安装包”按钮获取插件，并根据安装教程在Chrome浏览器中进行安装，即可开始使用。</dd>
-        <dt style="margin-top: 1em;"><strong>问：除了试卷，可以打印小红书上的其他笔记内容吗？</strong></dt>
-        <dd>答：可以。虽然我们专注于小红书试卷的提取和打印，但该工具同样适用于提取和打印任何图文形式的笔记或学习资料。</dd>
-        <dt style="margin-top: 1em;"><strong>问：为什么我需要一个专门的工具来打印小红书试卷？</strong></dt>
-        <dd>答：因为小红书的图片无法直接复制或批量保存，手动截图再排版非常耗时。我们的工具可以一键完成所有提取和排版工作，大大提升了打印小红书试卷的效率。</dd>
-      </dl>
+      <h2>常见问题</h2>
+      <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--shadow-card);">
+        <dl style="margin: 0;">
+          <dt style="font-weight: 600; color: var(--xhs-text-primary); margin-bottom: 8px;">问：如何获取并使用“卷卷侠”工具？</dt>
+          <dd style="margin: 0 0 24px 0; color: var(--xhs-text-secondary);">
+            答：您可以通过本页面上方的“立即下载离线安装包”按钮获取插件，并根据安装教程在Chrome浏览器中进行安装，即可开始使用。</dd>
+
+          <dt style="font-weight: 600; color: var(--xhs-text-primary); margin-bottom: 8px;">问：除了试卷，可以打印小红书上的其他笔记内容吗？
+          </dt>
+          <dd style="margin: 0 0 24px 0; color: var(--xhs-text-secondary);">
+            答：可以。虽然我们专注于小红书试卷的提取和打印，但该工具同样适用于提取和打印任何图文形式的笔记或学习资料。</dd>
+
+          <dt style="font-weight: 600; color: var(--xhs-text-primary); margin-bottom: 8px;">问：为什么我需要一个专门的工具来打印小红书试卷？
+          </dt>
+          <dd style="margin: 0; color: var(--xhs-text-secondary);">
+            答：因为小红书的图片无法直接复制或批量保存，手动截图再排版非常耗时。我们的工具可以一键完成所有提取和排版工作，大大提升了打印小红书试卷的效率。</dd>
+        </dl>
+      </div>
     </section>
   </main>
 
-  <footer role="contentinfo">
-    <p>© 2025 卷卷侠 - 小红书试卷提取打印工具 ｜ Made with ❤️ by Dengfeng Liu</p>
-    <p><small>核心关键词：小红书试卷提取打印、小红书试卷打印工具、试卷提取插件、Chrome试卷打印扩展、学习资料提取</small></p>
-    
-    <!-- 不蒜子访问统计显示 -->
-    <div class="site-stats">
-      <span>
-        <span class="stat-icon">👁️</span>
-        本站总访问量 <span id="busuanzi_value_site_pv">-</span> 次
-      </span>
-      <span>
-        <span class="stat-icon">👤</span>
-        访客数 <span id="busuanzi_value_site_uv">-</span> 人
-      </span>
-      <span>
-        <span class="stat-icon">📄</span>
-        本页阅读量 <span id="busuanzi_value_page_pv">-</span> 次
-      </span>
+  <footer>
+    <div class="container">
+      <p>© 2025 卷卷侠 - 小红书试卷提取打印工具 ｜ Made with ❤️ by Dengfeng Liu</p>
+      <div class="footer-stats">
+        <span>👁️ 总访问量 <span id="busuanzi_value_site_pv">-</span></span>
+        <span>👤 访客数 <span id="busuanzi_value_site_uv">-</span></span>
+        <span>📄 本页阅读 <span id="busuanzi_value_page_pv">-</span></span>
+      </div>
     </div>
   </footer>
 
@@ -571,9 +283,8 @@
     function showDownloadModal() {
       const modal = document.getElementById('downloadModal');
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden'; // 防止背景滚动
-      
-      // Google Analytics 事件追踪
+      document.body.style.overflow = 'hidden';
+
       if (typeof gtag !== 'undefined') {
         gtag('event', 'download_modal_show', {
           'event_category': 'engagement',
@@ -586,9 +297,8 @@
     function closeDownloadModal() {
       const modal = document.getElementById('downloadModal');
       modal.classList.remove('active');
-      document.body.style.overflow = ''; // 恢复滚动
-      
-      // Google Analytics 事件追踪
+      document.body.style.overflow = '';
+
       if (typeof gtag !== 'undefined') {
         gtag('event', 'download_modal_close', {
           'event_category': 'engagement',
@@ -606,26 +316,26 @@
           'value': 1
         });
       }
-      
-      // 延迟关闭弹窗，让下载开始
-      setTimeout(function() {
+
+      setTimeout(function () {
         closeDownloadModal();
       }, 500);
     }
 
     // 点击弹窗外部区域关闭
-    document.getElementById('downloadModal').addEventListener('click', function(e) {
+    document.getElementById('downloadModal').addEventListener('click', function (e) {
       if (e.target === this) {
         closeDownloadModal();
       }
     });
 
     // ESC 键关闭弹窗
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         closeDownloadModal();
       }
     });
   </script>
 </body>
+
 </html>
