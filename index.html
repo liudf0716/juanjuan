@@ -38,7 +38,7 @@
     "operatingSystem": "Chrome",
     "description": "专业的小红书试卷提取打印Chrome插件，帮助家长快速提取、打印小红书上的学习试卷和答案图片。支持批量提取、自动识别、一键打印、PDF保存等功能。",
     "softwareVersion": "1.0.0",
-    "downloadUrl": "https://liudf0716.github.io/jjpage/asset/juanjuanman-v1.0.0.zip",
+    "downloadUrl": "https://chromewebstore.google.com/detail/bmdhmhdgcaolganbeihgeacjibhgpcck",
     "featureList": [
       "小红书试卷自动提取",
       "一键批量打印",
@@ -96,7 +96,7 @@
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </div>
-      <h3 style="font-size: 24px; margin: 0 0 16px; color: var(--xhs-text-primary);">🎉 感谢下载卷卷侠！</h3>
+      <h3 style="font-size: 24px; margin: 0 0 16px; color: var(--xhs-text-primary);">🎉 欢迎使用卷卷侠！</h3>
       <p style="color: var(--xhs-text-secondary); margin-bottom: 24px;">
         <strong>加入官方 QQ 群</strong>，获取使用教程、及时更新和技术支持
       </p>
@@ -107,8 +107,9 @@
         扫描二维码加入我们，与其他家长交流学习资源
       </p>
       <div style="border-top: 1px solid var(--xhs-border); padding-top: 20px;">
-        <a href="asset/juanjuanman-v1.0.0.zip" download="juanjuanman-v1.0.0.zip" onclick="trackDownload()"
-          style="color: var(--xhs-text-tertiary); text-decoration: none; font-size: 14px;">跳过，直接下载插件 →</a>
+        <a href="https://chromewebstore.google.com/detail/bmdhmhdgcaolganbeihgeacjibhgpcck" target="_blank"
+          onclick="trackDownload()"
+          style="color: var(--xhs-red); text-decoration: none; font-size: 14px; font-weight: 600;">前往 Chrome 商店安装 →</a>
       </div>
     </div>
   </div>
@@ -120,7 +121,8 @@
         <h1>卷卷侠</h1>
       </div>
       <div class="header-actions">
-        <button class="btn primary" onclick="showDownloadModal()">立即下载</button>
+        <a href="https://chromewebstore.google.com/detail/bmdhmhdgcaolganbeihgeacjibhgpcck" target="_blank"
+          class="btn primary">Chrome 商店安装</a>
       </div>
     </div>
   </header>
@@ -130,17 +132,17 @@
       <h1 class="hero-title">小红书试卷提取打印工具</h1>
       <p class="hero-desc">专业的小红书试卷提取打印插件，一键提取、自动识别、批量打印，让家长轻松准备学习资料。</p>
       <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <button class="btn primary" onclick="showDownloadModal()">
-          <span>下载离线安装包 v1.0.0</span>
-        </button>
-        <a href="https://chromewebstore.google.com/detail/%E5%8D%B7%E5%8D%B7%E4%BE%A0%EF%BC%88%E5%B0%8F%E7%BA%A2%E4%B9%A6%E6%89%93%E5%8D%B0%E5%8A%A9%E6%89%8B%EF%BC%89/bmdhmhdgcaolganbeihgeacjibhgpcck"
-          target="_blank" class="btn secondary" title="前往 Chrome 网上应用店下载">
-          <span>Chrome 商店下载</span>
+        <a href="https://chromewebstore.google.com/detail/bmdhmhdgcaolganbeihgeacjibhgpcck" target="_blank"
+          class="btn primary" title="前往 Chrome 网上应用店安装">
+          <span>🚀 Chrome 商店一键安装</span>
         </a>
+        <button class="btn secondary" onclick="showDownloadModal()">
+          <span>加入交流群</span>
+        </button>
       </div>
       <div
         style="margin-top: 16px; font-size: 14px; color: var(--xhs-green, #52c41a); background: #f6ffed; display: inline-block; padding: 8px 16px; border-radius: 8px;">
-        🎉 卷卷侠已上架 Chrome 商店，推荐通过商店安装！
+        ✅ 官方 Chrome 商店上架，安全可靠，自动更新！
       </div>
     </section>
 
@@ -198,28 +200,29 @@
       </div>
     </section>
 
-    <section id="manual-install">
+    <section id="install-guide">
       <h2>安装指南</h2>
       <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: var(--shadow-card);">
-        <p style="margin-bottom: 24px; color: var(--xhs-text-secondary);">由于 Chrome 商店审核原因，目前需要手动安装离线包：</p>
+        <p style="margin-bottom: 24px; color: var(--xhs-text-secondary);">通过 Chrome 商店安装，简单快捷：</p>
         <ol class="step-list">
           <li class="step-item">
-            <span class="step-title">下载并解压</span>
-            <span class="step-desc">下载安装包并解压到文件夹</span>
+            <span class="step-title">访问 Chrome 商店</span>
+            <span class="step-desc">点击上方"Chrome 商店一键安装"按钮，前往 Chrome 网上应用店</span>
           </li>
           <li class="step-item">
-            <span class="step-title">打开扩展程序页面</span>
-            <span class="step-desc">在浏览器输入 chrome://extensions 并开启右上角"开发者模式"</span>
+            <span class="step-title">添加扩展程序</span>
+            <span class="step-desc">点击"添加至 Chrome"按钮，在弹出的确认框中点击"添加扩展程序"</span>
           </li>
           <li class="step-item">
-            <span class="step-title">加载扩展</span>
-            <span class="step-desc">点击"加载未打包的扩展程序"，选择解压后的文件夹</span>
+            <span class="step-title">开始使用</span>
+            <span class="step-desc">安装完成后，浏览器右上角会出现卷卷侠图标，即可开始使用</span>
           </li>
         </ol>
-        <div class="screenshot-gallery" style="margin-top: 32px;">
-          <div class="screenshot-card">
-            <img src="images/externsion_install.png" alt="安装步骤">
-          </div>
+        <div style="margin-top: 24px; text-align: center;">
+          <a href="https://chromewebstore.google.com/detail/bmdhmhdgcaolganbeihgeacjibhgpcck" target="_blank"
+            class="btn primary" style="display: inline-flex;">
+            🚀 前往 Chrome 商店安装
+          </a>
         </div>
       </div>
     </section>
